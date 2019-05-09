@@ -7,10 +7,23 @@ function setup() {
 
 
 function draw(){
-ellipse(650,325,150,150)
+ellipse(650,325,350,350);
+fill(247, 111, 147)
 
 
+
+	 
+
+	// then rotate the grid around the pivot point by a
+	// number of degrees equal to the frame count of the sketch
+  rotate(radians(frameCount));
+  
+  line(650,150,650,500);
+  line(475,325,825,325)
 }
 
 
-//ball class from which to create new balls with similar properties.
+
+
+
+
