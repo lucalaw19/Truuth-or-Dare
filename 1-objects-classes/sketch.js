@@ -12,14 +12,14 @@ fill(247, 111, 147)
 
 
 
-	 
+	translate(650,325); 
 
 	// then rotate the grid around the pivot point by a
 	// number of degrees equal to the frame count of the sketch
   rotate(radians(frameCount));
   
-  line(650,150,650,500);
-  line(475,325,825,325)
+  line(0,-175,0,175);
+  line(-175,0,175,0);
 }
 
 
