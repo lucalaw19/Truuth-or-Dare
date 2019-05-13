@@ -1,52 +1,46 @@
-//create a variable to hold one ball
-let b;
-let anotherBird;
-let otherBird;
+
+let buttona;
+let buttonb;
+let truthset = ["say this","say that","say the other thing"];
+let dareset = ["do this","do that","do the other thing"];
+
+
 
 function setup() {
-  createCanvas(800, 400);
-  red = new Bird(0, 0,"red"); //make a new ball from the Ball class and call it b.
-  orange = new Bird(0,20,"orange");
-  yellow = new Bird(0, 40, "yellow");
-  green = new Bird(0, 60,"green");
-  blue = new Bird(0, 80,"blue");
-  purple = new Bird(0, 100,"purple");
+  createCanvas(1300, 650);
+  background(177, 207, 239);
+  buttona = createButton('Truth');
+  buttona.position(400, 50);
+  buttona.mousePressed(changeA);
+  buttonb = createButton('Dare');
+  buttonb.position(900, 50);
+  buttonb.mousePressed(changeB);
 }
 
 
 function draw(){
-	background(220);
-    red.drawBird();
-    red.moveBird();
-    orange.drawBird();
-    orange.moveBird();
-    yellow.drawBird();
-    yellow.moveBird();
-    green.drawBird();
-    green.moveBird();
-    blue.drawBird();
-    blue.moveBird();
-    purple.drawBird();
-    purple.moveBird();
-
+  textSize(32);
+  text('or', 650, 65);
+  fill(0, 102, 153);
+  line(0, 100, 1300, 100);
 }
 
+function changeA(){
+  noStroke();
+  fill(177, 207, 239);
+  rect(10,275,350,75);
+  fill(0);
+  var rand = truthset[Math.floor(Math.random() * truthset.length)];
+  textSize(32);
+  text(rand, 50, 325);
+}
 
-//ball class from which to create new balls with similar properties.
-class Bird {
-
-	constructor(x,y,color){ //every ball needs an x value and a y value
-		    this.x = x;
-    		this.y = y;
-        this.color= color;
-	}
-	drawBird(){  // draw a ball on the screen at x,y
-    		stroke(0);
-    		fill(this.color);
-		    rect(this.x,this.y,10,10);
-	}
-	moveBird(){ //update the location of the ball, so it moves across the screen
-		this.x = this.x+2;
-		this.y = this.y+.5;
-	}
+function changeB(){
+ noStroke();
+ fill(177, 207, 239);
+ rect(900,275,350,75);
+ fill(0);
+ var rand = dareset[Math.floor(Math.random() * dareset.length)];
+ textSize(32);
+ text(rand, 1000, 325);
 }
