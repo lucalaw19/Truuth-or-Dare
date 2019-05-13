@@ -26,12 +26,20 @@ function draw(){
 }
 
 function changeA(){
+  noStroke();
+  fill(177, 207, 239);
+  rect(10,275,350,75);
+  fill(0);
   var rand = truthset[Math.floor(Math.random() * truthset.length)];
   textSize(32);
   text(rand, 50, 325);
 }
 
 function changeB(){
+ noStroke();
+ fill(177, 207, 239);
+ rect(900,275,350,75);
+ fill(0);
  var rand = dareset[Math.floor(Math.random() * dareset.length)];
  textSize(32);
  text(rand, 1000, 325);
