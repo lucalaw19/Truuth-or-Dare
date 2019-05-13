@@ -1,46 +1,47 @@
 
-//create an empty array called balls
-let balls = [];
+
+let buttona;
+let buttonb;
+let truthset = ["say this","say that","say the other thing"];
+let dareset = ["do this","do that","do the other thing"];
+
+
 
 function setup() {
-  createCanvas(800, 400);
-
+  createCanvas(1300, 650);
+  background(177, 207, 239);
+  buttona = createButton('Truth');
+  buttona.position(400, 50);
+  buttona.mousePressed(changeA);
+  buttonb = createButton('Dare');
+  buttonb.position(900, 50);
+  buttonb.mousePressed(changeB);
 }
+
 
 function draw(){
-	background(220);
-
-//	draw all the balls in that array
-	for (let i = 0; i < balls.length; i++) {
-	    balls[i].drawBall();
-        balls[i].moveBall();
-	  }
+  textSize(32);
+  text('or', 650, 65);
+  fill(0, 102, 153);
+  line(0, 100, 1300, 100);
 }
 
-function keyPressed(){ //every time you push a key, make a new ball from the ball class and add it to the balls array
-  let  b = new Ball(100, 100);
-  balls.push(b);
-  console.log(balls);
+function changeA(){
+  noStroke();
+  fill(177, 207, 239);
+  rect(10,275,350,75);
+  fill(0);
+  var rand = truthset[Math.floor(Math.random() * truthset.length)];
+  textSize(32);
+  text(rand, 50, 325);
 }
 
-//ball class from which to create new balls with similar properties.
-class Ball {
-
-	constructor(x,y){ //every ball needs an x value and a y value
-		    this.x = x;
-    		this.y = y;
-	}
-
-	drawBall(){  // draw a ball on the screen at x,y
-    		stroke(0);
-    		fill("red");
-		    ellipse(this.x,this.y,10,10);
-	}
-
-	moveBall(){ //update the location of the ball, so it moves across the screen
-		this.x = this.x+2;
-		this.y = this.y+.5;
-	}
-
-
+function changeB(){
+ noStroke();
+ fill(177, 207, 239);
+ rect(900,275,350,75);
+ fill(0);
+ var rand = dareset[Math.floor(Math.random() * dareset.length)];
+ textSize(32);
+ text(rand, 1000, 325);
 }
