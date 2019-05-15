@@ -4,7 +4,7 @@ let buttona;
 let buttonb;
 let truthset = ["say this","say that","say the other thing"];
 let dareset = ["do this","do that","do the other thing"];
-
+let spinning = false
 
 
 function setup() {
@@ -25,40 +25,63 @@ function draw(){
   text('or', 650, 65);
   fill(247, 111, 147);
   line(0, 100, 1300, 100);
-  ellipse(650,325,350,350);
 
 
 
-  push();
-  translate(650,325);
+
+  // spin();
+
+  if (spinning == true){
+
+    ellipse(650,325,350,350);
+    push();
+    print("runns")
+    translate(650,325);
+    
+
 
   // then rotate the grid around the pivot point by a
   // number of degrees equal to the frame count of the sketch
-  rotate(radians(frameCount));
-
-  line(0,-175,0,175);
-  line(-175,0,175,0);
-  line(123.744,123.744,-123.744,-123.7443);
-  line(-123.744,123.744,123.744,-123.744);
-  pop();
+    rotate(radians(frameCount));
+    line(0,-175,0,175);
+    line(-175,0,175,0);
+    line(123.744,123.744,-123.744,-123.7443);
+    line(-123.744,123.744,123.744,-123.744);
+    pop();
+  }
 }
 
 function changeA(){
-  noStroke();
-  fill(177, 207, 239);
-  rect(10,275,350,75);
+  spinning = true
+  newTruth();
   fill(0);
   var rand = truthset[Math.floor(Math.random() * truthset.length)];
   textSize(32);
   text(rand, 50, 325);
+  stroke();
 }
 
 function changeB(){
- noStroke();
- fill(177, 207, 239);
- rect(900,275,350,75);
+ spinning = true
+ newDare();
  fill(0);
  var rand = dareset[Math.floor(Math.random() * dareset.length)];
  textSize(32);
  text(rand, 1000, 325);
+ stroke();
+}
+
+
+
+function newTruth(){
+  noStroke();
+  fill(177, 207, 239);
+  rect(10,275,350,75);
+
+}
+
+function newDare(){
+  noStroke();
+  fill(177, 207, 239);
+  rect(900,275,350,75);
 }
