@@ -20,15 +20,16 @@ function setup() {
 
 
 function draw(){
+  fill(0, 102, 153);
   textSize(32);
   text('or', 650, 65);
-  fill(0, 102, 153);
+  fill(247, 111, 147);
   line(0, 100, 1300, 100);
   ellipse(650,325,350,350);
-  fill(247, 111, 147)
 
 
 
+  push();
   translate(650,325);
 
   // then rotate the grid around the pivot point by a
@@ -39,6 +40,7 @@ function draw(){
   line(-175,0,175,0);
   line(123.744,123.744,-123.744,-123.7443);
   line(-123.744,123.744,123.744,-123.744);
+  pop();
 }
 
 function changeA(){
