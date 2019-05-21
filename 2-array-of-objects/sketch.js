@@ -2,14 +2,20 @@
 
 let buttona;
 let buttonb;
-let truthset = ["Who is the hottest person in the room?","Who do you want to punch in the face who goes to your school?","Have you ever touched your poop?","What would you do if you were the opposite gender for a month?","What would be the first thing you google if you were asleep for 50 years?"
+let truthset = ["Who is the hottest person in the room?",
+"Who do you want to punch in the face who goes to your school?","Have you ever touched your poop?","What would you do if you were the opposite gender for a month?","What would be the first thing you google if you were asleep for 50 years?"
 "What’s the most expensive thing you ever stolen?",
 "What’s your favorite taste?",
 "What’s the worst grade you’ve ever gotten?",
 "Have you ever gotten mono?",
 "What is the biggest lie you’ve told?",
 "When is the last time you’ve cried?",
-"Would you rather not have hands or feet?"];
+"Would you rather not have hands or feet?"
+"What is your worst grade right now?",
+"Would you rather never take shower or not have eyelids?",
+"What's your favorite ice cream flavor?",
+""
+];
 
 
 let dareset = ["Lick a toe",
@@ -21,7 +27,10 @@ let dareset = ["Lick a toe",
 "Draw a dog on your forehead in sharpie",
 "Drink soda through your nose",
 "Try to swallow your fist",
-"Cut off a piece of your hair"];
+"Cut off a piece of your hair",
+"Go up to a stranger and put your hand on their shoulder, wink, then walk away",
+"Text the first alphabetically contact on your phone and maliciously threaten them.",
+"Scroll through your snapchat friends and randomly select someone then text them 'wyd'."];
 
 
 
