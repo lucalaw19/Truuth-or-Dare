@@ -7,6 +7,7 @@ let dareset = ["do this","do that","do the other thing"];
 let spinning = false;
 let spin_start = 0;
 let rotate_position = 0;
+let timer = 0;
 
 
 function setup() {
@@ -49,16 +50,29 @@ function draw(){
   line(-123.744,123.744,123.744,-123.744);
   pop();
 
+  if(spinning == true){
+    if(frameCount > timer + 200){
+      textSize(32);
+      text(rand, 300, 0);
+    }
+  }
 }
 
 function changeA(){
+  set timer = frameCount;
   spinning = true
   frame_start = frameCount;
-  drawTruth(truthset[Math.floor(Math.random() * truthset.length)]);
+  newTruth();
+  fill(0);
+  var rand = truthset[Math.floor(Math.random() * truthset.length)];
+  textSize(32);
+  text(rand, -600, 0);
+  stroke();
 
 }
 
 function changeB(){
+ timer = frameCount;
  spinning = true
  frame_start = frameCount;
  newDare();
@@ -71,16 +85,12 @@ function changeB(){
 
 
 
-function drawTruth(random){
+function newTruth(){
+  delayTime(delayTime);
   noStroke();
   fill(177, 207, 239);
   rect(-600,-50,350,75);
   rect(300,-50,350,75);
-  fill(0);
-  var rand = truthset[Math.floor(Math.random() * truthset.length)];
-  textSize(32);
-  text(random, -600, 0);
-  stroke();
 }
 
 function newDare(){
